@@ -23,4 +23,4 @@ spec:
       - name: nginx-app001
         image: nginx:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 80
