@@ -1,0 +1,21 @@
+# replicaset.yml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx-rs
+  namespace: mayur-ns
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: nginx-app001
+  template:
+    metadata:
+      labels:
+        app: nginx-app001
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
