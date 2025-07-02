@@ -8,6 +8,7 @@ metadata:
     env: test
     version: v1.0.0
 spec:
+  replicas: 5
   selector: 
     matchLabels: 
       app: nginx-app001
