@@ -1,14 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-app001
+  name: mg-electronics
   namespace: mayur-ns
   labels:
-    app: nginx-app001
+    app: mg-electronics
     env: test
     version: v1.0.0
 spec:
-  replicas: 5
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -16,17 +15,17 @@ spec:
       maxSurge: 1
   selector: 
     matchLabels: 
-      app: nginx-app001
+      app: mg-electronics
       env: test    
   template: 
     metadata: 
       labels:
-        app: nginx-app001
+        app: mg-electronics
         env: test
         version: v1.0.0
     spec:
       containers:
-      - name: nginx-app001
-        image: nginx:latest
+      - name: mg-electronics
+        image: mayurghule/javapp:latest
         ports:
-        - containerPort: 80
+        - containerPort: 8080
